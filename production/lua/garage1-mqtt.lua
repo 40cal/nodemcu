@@ -8,7 +8,7 @@ m:connect("192.168.20.9","1883",0,1) -- no SSL and use auto reconnect.
 --When MQTT client connects then subscribe to home/garage
 m:on("connect", function(client) m:subscribe("home/garage", 0) end)
 
-m:on("message", function(client, topic, data) 
+m:on("message", function(client, topic, data) -- read MQTT message value and store in 'data' variable
    
   if data ~= nil then
     if data == "togglegd" then
